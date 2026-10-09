@@ -1,0 +1,21 @@
+const { createTask, fetchAllTasks, updateTaskById, deleteTaskById } = require('../Controllers/TaskController');
+
+const router = require('express').Router();
+
+// Get all tasks 
+
+router.get('/', fetchAllTasks)
+
+// To create a task 
+
+router.post('/',createTask);
+
+// To update a task 
+
+router.put('/:id',updateTaskById)
+
+// To delete task 
+
+router.delete('/:id',deleteTaskById)
+
+module.exports = router;
